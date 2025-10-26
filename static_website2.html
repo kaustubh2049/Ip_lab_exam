@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Static Website - Tables, Lists, Forms, Alerts</title>
+  </head>
+  <body style="background-color: grey; font-family: Arial; margin: 20px;">
+    <h1 style="color: yellow;">This Website Shows</h1>
+    <p style="font-weight: bold; font-size: 150%;">A. List</p>
+    <p style="font-size: 150%;">B. Forms</p>
+    <p style="font-size: 150%;">C. Tables</p>
+    <p style="font-size: 150%;">D. Alerts</p>
+
+    <!-- Alert -->
+    <h2>SHOWING ALERT MESSAGE NOW</h2>
+    <button
+      onclick="alert('This is a simple alert message!')"
+      style="background-color: black; color: bisque; margin: 20px auto; padding: 20px; border-radius: 50px;"
+    >
+      ALERT!!!!
+    </button>
+
+    <!-- Table -->
+    <h2 style="color: aquamarine;">Table Showing Students Marks</h2>
+    <table
+      border="2"
+      style="border-collapse: collapse; width: 100%; background-color: aliceblue; margin-top: 20px;"
+    >
+      <tr style="color: aqua; background-color: black; font-weight: bold;">
+        <td>Student Name</td>
+        <td>Age</td>
+        <td>Marks Obtained</td>
+      </tr>
+      <tr>
+        <td>Kaustubh</td>
+        <td>19</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>XYZ</td>
+        <td>20</td>
+        <td>34</td>
+      </tr>
+    </table>
+
+    <!-- Unordered List -->
+    <div
+      style="background-color: white; padding: 10px; border-radius: 5px; margin-top: 20px;"
+    >
+      <h2>Unordered List</h2>
+      <ul>
+        <li>JavaScript</li>
+        <li>CSS</li>
+        <li>React</li>
+      </ul>
+    </div>
+
+    <!-- Ordered List -->
+    <div
+      style="background-color: white; padding: 10px; border-radius: 5px; margin-top: 20px;"
+    >
+      <h2>Ordered List</h2>
+      <ol>
+        <li>JavaScript</li>
+        <li>CSS</li>
+        <li>React</li>
+      </ol>
+    </div>
+
+    <!-- Registration Form -->
+    <h1 style="margin-top: 10px;color:yellow">User Registration Form</h1>
+    <form
+      id="regForm"
+      style="background-color: aqua; text-align: center; margin: 10px auto; padding: 20px; width: 90%; border-radius: 10px;"
+    >
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        style="margin:10px; width:90%; padding: 10px;"
+      /><br />
+      <input
+        type="text"
+        id="email"
+        placeholder="Email"
+        style="margin:10px; width:90%; padding: 10px;"
+      /><br />
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        style="margin:10px; width:90%; padding: 10px;"
+      /><br />
+      <button
+        type="button"
+        onclick="validateForm()"
+        style="border-radius: 10px; background-color: blue; color: aliceblue; font-weight: bold; padding: 20px; width: 30%;"
+      >
+        Register
+      </button>
+      <p id="errormsg" style="color: red; font-weight: bold; margin-top: 10px;"></p>
+    </form>
+
+    <script>
+      function validateForm() {
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let errormsg = document.getElementById("errormsg");
+
+        errormsg.innerHTML = "";
+
+        if (username === "") {
+          errormsg.innerHTML = "⚠️ Username is required!";
+          return;
+        }
+
+        if (email === "" || email.indexOf("@") === -1) {
+          errormsg.innerHTML = "⚠️ Enter a valid email!";
+          return;
+        }
+
+        if (password === "" || password.length < 4) {
+          errormsg.innerHTML = "⚠️ Password must be at least 4 characters!";
+          return;
+        }
+
+        alert("✅ Registration Successful!");
+        document.getElementById("regForm").reset(); // Clear the form
+      }
+    </script>
+  </body>
+</html>

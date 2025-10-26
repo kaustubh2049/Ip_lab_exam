@@ -1,0 +1,60 @@
+/* Overall page styling */
+body {
+  background-color: brown;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Common styling for all div boxes */
+div {
+  width: 60%;                /* Makes all boxes equal in width */
+  margin: 20px auto;         /* Centers them horizontally */
+  padding: 20px;             /* Gives equal space inside */
+  text-align: center;        /* Centers the text */
+  border-radius: 10px;       /* Soft rounded corners */
+}
+
+/* Border Property Examples */
+.solid-border {
+  color: black;
+  border: 4px solid white;
+  background-color: green;
+}
+
+.dotted-border {
+  color: black;
+  border: 4px dotted white;
+  background-color: green;
+}
+
+.double-border {
+  border: 6px double blue;
+  background-color: white;
+}
+
+/* Color Property Examples */
+.color-demo {
+  background-color: yellow;
+  color: purple;
+  border: 2px solid black;   /* fixed spelling from 'solib' → 'solid' */
+}
+
+.rgb-color {
+  background-color: rgb(200, 255, 200);
+  color: rgb(0, 100, 0);
+  border: 2px solid black;
+}
+
+.hex-color {
+  background-color: #ffe4b5;
+  color: #b22222;
+  border: 2px solid black;
+}
+
+/* Gradient Box Example */
+.gradient-box {
+  border: 3px solid #333;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
