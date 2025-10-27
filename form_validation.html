@@ -1,76 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Form Validation in JS</title>
+  <head>
+    <title>FORM VALIDATION IN JS</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: #8b3dc4;
-        }
-        form {
-            background-color: red;
-            margin: 50px auto;
-            padding: 20px;
-            width: 90%;
-            border-radius: 10px;
-        }
-        input {
-            margin: 10px;
-            padding: 10px;
-            width: 90%;
-        }
-        button {
-            background-color: blue;
-            width: 30%;
-            margin: 20px;
-            padding: 10px;
-            color: white;
-        }
-        .error {
-            color: white;
-            font-size: 14px;
-        }
+      button {
+        color: blue;
+        width: 50%;
+        padding: 45px;
+      }
+      button:hover {
+        background-color: rgb(199, 34, 34);
+      }
     </style>
-</head>
-<body>
-    <h1>Registration Form</h1>
-    <form onsubmit="return validateForm()">
-        <input type="text" id="name" placeholder="Name"><br>
-        <input type="text" id="email" placeholder="Email"><br>
-        <input type="password" id="password" placeholder="Password"><br>
-        <button type="submit">Register</button>
-        <p class="error" id="errormsg"></p>
-    </form>
+  </head>
+  <body>
+    <div>
+      <h1>FORM VALIDATION IN JAVASCRIPT</h1>
+      <form>
+        <input
+          style="
+            background-color: aqua;
+            width: 50%;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+          "
+          type="text"
+          id="name"
+          placeholder="NAME"
+        /><br />
+        <input type="email" id="email" placeholder="Email" /><br />
+        <input type="password" id="password" placeholder="Passoword" /><br />
+        <button onclick=" return validateform()">Register</button>
+      </form>
+      <script>
+        function validateform() {
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("password").value;
 
-    <script>
-        function validateForm() {
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let errormsg = document.getElementById("errormsg");
-
-            errormsg.innerHTML = "";
-
-            if (name == "") {
-                errormsg.innerHTML = "Name is required!";
-                return false;
-            }
-
-            if (email == "" || email.indexOf("@") == -1) {
-                errormsg.innerHTML = "Enter a valid email!";
-                return false;
-            }
-
-           
-  if(password == "" || password.length < 4) {
-    errormsg.innerHTML = "Password must be at least 4 characters!";
-    return false;
-  }
-
-            alert("Registration Successful!");
-            return true;
+          if (name === "") {
+            alert("name is required");
+          }
+          if (email === "" || email.indefOf("@") === -1) {
+            alert("Email conditions not meet");
+          }
+          if (password === "" || password.length < 4) {
+            alert("Password too short");
+          }
         }
-    </script>
-</body>
+      </script>
+    </div>
+  </body>
 </html>

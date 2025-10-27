@@ -11,8 +11,8 @@ let myPromise = new Promise((resolve, reject) => {
 // Using the promise
 myPromise
   .then((message) => {
-    console.log("Then: " + message); // runs if resolved
+    console.log(message); // runs if resolved
   })
   .catch((error) => {
-    console.log("Catch: " + error); // runs if rejected
+    console.log(error); // runs if rejected
   });

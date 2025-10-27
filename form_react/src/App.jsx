@@ -1,77 +1,50 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { useState } from "react";
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleClick = () => {
-    // Basic validation
+  function validateform() {
     if (name === "") {
-      alert("Name cannot be empty!");
+      alert("Name is not complete");
       return;
     }
-
-    if (email === "") {
-      alert("Email cannot be empty!");
+    if (email === "" || email.indexOf("@") === -1) {
+      alert("Email Condition not meet");
       return;
     }
-
-    if (password.length < 4) {
-      alert("Password must be at least 4 characters!");
+    if (password === "" || password.length < 4) {
+      alert("Password Condition not meet");
       return;
     }
-
-    alert(`Name: ${name}\nEmail: ${email}\nPassword: ${password}`);
-
-    // Reset fields
-    setName("");
     setEmail("");
+    setName("");
     setPassword("");
-  };
-
+    alert("Registered Successfully");
+  }
   return (
-    <div style={{ maxWidth: "300px", margin: "auto", padding: "20px" }}>
-      <h2>Simple Form</h2>
-
+    <div>
+      <h1>FORM VALIDATION IN REACTJS</h1>
       <input
         type="text"
-        placeholder="Enter Name"
+        placeholder="NAME"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-      />
-
+      ></input>
       <input
-        type="email"
-        placeholder="Enter Email"
+        type="text"
+        placeholder="EMAIL"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-      />
-
+      ></input>
       <input
-        type="password"
-        placeholder="Enter Password"
+        type="text"
         value={password}
+        placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
-        style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-      />
-
-      <button
-        onClick={handleClick}
-        style={{
-          width: "100%",
-          padding: "10px",
-          backgroundColor: "teal",
-          color: "white",
-          border: "none",
-        }}
-      >
-        Submit
-      </button>
+      ></input>
+      <button onClick={validateform}>REGISTER!!</button>
     </div>
   );
 }
-
 export default App;
